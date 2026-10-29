@@ -1,0 +1,17 @@
+{
+  "name": "simple-crm",
+  "version": "1.0.0",
+  "description": "A simple local CRM with contacts, deals, and a dashboard",
+  "main": "server.js",
+  "private": true,
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "reset": "node -e \"require('fs').rmSync('crm.db',{force:true})\" && npm start"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

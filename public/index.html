@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple CRM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <span>Simple CRM</span>
+      </div>
+      <nav>
+        <a href="#/" data-route="dashboard">
+          <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3zm0 8h8v-6H3zm10 0h8V11h-8zm0-18v6h8V3z"/></svg>
+          Dashboard
+        </a>
+        <a href="#/contacts" data-route="contacts">
+          <svg viewBox="0 0 24 24"><path d="M16 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm-8 0a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm0 2c-2.3 0-7 1.2-7 3.5V19h7v-2.5c0-.9.4-1.8 1.1-2.5A10 10 0 0 0 8 13zm8 0c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"/></svg>
+          Contacts
+        </a>
+        <a href="#/deals" data-route="deals">
+          <svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5zm1 16h-2v-1.1A3.3 3.3 0 0 1 8.5 13h2a1.5 1.5 0 1 0 1.5-1.5 3.5 3.5 0 0 1-1-6.8V3.5h2v1.2A3.3 3.3 0 0 1 15.5 8h-2A1.5 1.5 0 1 0 12 9.5a3.5 3.5 0 0 1 1 6.8z"/></svg>
+          Deals
+        </a>
+      </nav>
+      <div class="sidebar-foot">Local workspace</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 id="page-title">Dashboard</h1>
+          <p id="page-subtitle" class="muted"></p>
+        </div>
+        <div id="page-actions"></div>
+      </header>
+      <section id="view" class="view"></section>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="modal-title"></h2>
+        <button class="icon-btn" data-close aria-label="Close">&times;</button>
+      </div>
+      <form id="modal-form" novalidate>
+        <div id="modal-body" class="form-grid"></div>
+        <p id="modal-error" class="form-error"></p>
+        <div class="modal-foot">
+          <button type="button" id="modal-delete" class="btn btn-danger-ghost hidden">Delete</button>
+          <div class="spacer"></div>
+          <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+          <button type="submit" class="btn btn-primary" id="modal-submit">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
